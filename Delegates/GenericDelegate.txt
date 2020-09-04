@@ -1,0 +1,17 @@
+Func :
+
+1.System namespace
+2. it takes 1 or more inputs and returns  1 out parameter
+Func<int,float,double,double>
+
+Action:
+1. System namespace
+2. 1 or more => 16 but dont return any value;
+
+Predicate
+
+Events and Delegates:
+
+add()
+{
+}

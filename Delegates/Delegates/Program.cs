@@ -1,5 +1,5 @@
 ﻿using System;
-
+using static Delegates.DelegateDemo;
 
 namespace Delegates
 {
@@ -7,6 +7,8 @@ namespace Delegates
     {
         public delegate void TestDelegate();
         public delegate void Demodelegate(int a);
+        // Out Parameter Delegate
+        public delegate void OutParameterDelegate(out int x);
         public  void Function1()
         {
             Console.WriteLine("Function1 executed!!");
@@ -28,6 +30,10 @@ namespace Delegates
         {
             Console.WriteLine("Value of x is " + x);
         }
+        public static void OutParameterMethod(out int num)
+        {
+            num = 2;
+        }
     }
     
     class Program
@@ -48,7 +54,11 @@ namespace Delegates
             DelegateDemo.Demodelegate dm = new DelegateDemo.Demodelegate(del.Function4);
             dm += del.Function5;
             dm(34);
-            
+            Console.WriteLine("Delegate with out Parameter");
+            OutParameterDelegate out1 = new OutParameterDelegate(OutParameterMethod);
+            int value = 1;
+            out1(out value);
+            Console.WriteLine("Value is " + value);
             Console.ReadLine();
         }
     }
